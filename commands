@@ -1,0 +1,5 @@
+#diff ps with old ps file(proc_base)
+#mypipe is named pipe : mkfifo mypipe
+ps aux > mypipe | diff --unchanged-line-format= --old-line-format= --new-line-format='%L' proc_base mypipe 
+
+
