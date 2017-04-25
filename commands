@@ -2,4 +2,16 @@
 #mypipe is named pipe : mkfifo mypipe
 ps aux > mypipe | diff --unchanged-line-format= --old-line-format= --new-line-format='%L' proc_base mypipe 
 
+#Check hashing algo being used
+authconfig --test | grep hashing
 
+From the shadow file(second field) 
+ $1 = MD5 hashing algorithm.
+ $2 =Blowfish Algorithm is in use.
+ $2a=eksblowfish Algorithm
+ $5 =SHA-256 Algorithm
+ $6 =SHA-512 Algorithm
+ 
+ #Changing hashing algo to sha512
+ authconfig --passalgo=sha512 --update
+ #need to change password if algorithm is changed
