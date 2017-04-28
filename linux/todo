@@ -4,3 +4,4 @@ Make different firewall rules for each linux system(web, ssh, whatever)
 install fail2ban on each
 check kernel version and install latest
 script that checks /etc/ n /tmp directories for new files etc
+Check sudoers file
