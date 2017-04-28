@@ -5,7 +5,8 @@ sudo apt-get update
 sudo apt-get install osquery
 
 curl https://raw.githubusercontent.com/suhass92/irsec/master/osquery/osquery.conf > osquery.conf
+curl https://raw.githubusercontent.com/suhass92/irsec/master/osquery/fim.conf > fim.conf
 
 sudo cp osquery.conf /etc/osquery/
-
+sudo cp fim.conf /usr/share/osquery/packs/
 sudo systemctl start osqueryd
