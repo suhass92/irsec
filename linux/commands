@@ -15,3 +15,6 @@ From the shadow file(second field)
  #Changing hashing algo to sha512
  authconfig --passalgo=sha512 --update
  #need to change password if algorithm is changed
+
+
+rpm –V util-linux
