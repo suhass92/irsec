@@ -1,0 +1,25 @@
+interface vlan 101
+ip add a.b.c.d
+conf t
+	hostname ...
+	ip domain-name ...
+
+	crypto key generate rsa
+	#use 1024
+	
+	line vty 0 4
+	(config-line)# transport input ssh
+	(config-line)# login local
+	(config-line)# password 7
+	(config-line)# exit
+
+	line console 0
+	(config-line)# logging synchronous
+	(config-line)# login local
+
+	username aaa secret blah
+
+enable secret myenablepassword
+
+service password-encryption
+
