@@ -17,4 +17,23 @@ From the shadow file(second field)
  #need to change password if algorithm is changed
 
 
+#Rootkit stuff
+
+#rpm integrity check for linux utils. Returns a series of flags with the legend provided below.
 rpm –V util-linux
+
+S file Size differs
+M Mode differs (includes permissions and file type)
+5 MD5 sum differs
+D Device major/minor number mis-match
+L readLink(2) path mis-match
+U User ownership differs
+G Group ownership differs
+T mTime differs
+
+#chkrootkit is a tool to check for signs of a rootkit.
+
+#Use lsmod to keep a list of loaded modules and keep checking it for changes.
+
+
+Ref: https://www.sans.org/reading-room/whitepapers/linux/linux-rootkits-beginners-prevention-removal-901
