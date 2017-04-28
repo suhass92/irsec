@@ -21,6 +21,8 @@ From the shadow file(second field)
 
 #rpm integrity check for linux utils. Returns a series of flags with the legend provided below.
 rpm –V util-linux
+#integrity check for linux utils on ubuntu
+debsums -a util-linux
 
 S file Size differs
 M Mode differs (includes permissions and file type)
