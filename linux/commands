@@ -72,3 +72,5 @@ SELECT User,Host,Password FROM mysql.user;
 UPDATE mysql.user SET Password=PASSWORD('newPassWord') WHERE User="";
 UPDATE mysql.user SET Host='localhost' WHERE User="demo-user";
 
+lynis --tests “Test-IDs”
+
