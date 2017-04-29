@@ -15,6 +15,7 @@
  iptables -A OUTPUT -p tcp --dport 80 -j ACCEPT
  iptables -A INPUT -p tcp --dport 80 -j ACCEPT
  iptables -A OUTPUT -p tcp --dport 443 -j ACCEPT
+ iptables -A OUTPUT -p tcp --dport 9000 --dst 10.21.X.10 -j ACCEPT
 #
 #
  iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
