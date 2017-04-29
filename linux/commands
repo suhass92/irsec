@@ -15,3 +15,60 @@ From the shadow file(second field)
  #Changing hashing algo to sha512
  authconfig --passalgo=sha512 --update
  #need to change password if algorithm is changed
+
+
+#Rootkit stuff
+
+#rpm integrity check for linux utils. Returns a series of flags with the legend provided below.
+rpm –V util-linux
+#integrity check for linux utils on ubuntu
+debsums -a util-linux
+
+S file Size differs
+M Mode differs (includes permissions and file type)
+5 MD5 sum differs
+D Device major/minor number mis-match
+L readLink(2) path mis-match
+U User ownership differs
+G Group ownership differs
+T mTime differs
+
+#chkrootkit is a tool to check for signs of a rootkit.
+
+#Use lsmod to keep a list of loaded modules and keep checking it for changes.
+
+
+Ref: https://www.sans.org/reading-room/whitepapers/linux/linux-rootkits-beginners-prevention-removal-901
+
+
+
+#Here's how to disable the protocol on a Red Hat-based system:
+
+Open a terminal window.
+Change to the root user.
+Issue the command sysctl -w net.ipv6.conf.all.disable_ipv6=1
+Issue the command sysctl -w net.ipv6.conf.default.disable_ipv6=1
+To re-enable IPv6, issue the following commands:
+
+sysctl -w net.ipv6.conf.all.disable_ipv6=0
+
+sysctl -w net.ipv6.conf.default.disable_ipv6=0
+
+#Debian
+
+sudo nano /etc/sysctl.conf
+
+3. Add the following at the bottom of the file:
+
+net.ipv6.conf.all.disable_ipv6 = 1
+
+net.ipv6.conf.default.disable_ipv6 = 1
+
+net.ipv6.conf.lo.disable_ipv6 = 1
+
+
+# Change the password in Mysql
+SELECT User,Host,Password FROM mysql.user;
+UPDATE mysql.user SET Password=PASSWORD('newPassWord') WHERE User="";
+UPDATE mysql.user SET Host='localhost' WHERE User="demo-user";
+
