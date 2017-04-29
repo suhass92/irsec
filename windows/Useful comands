@@ -18,3 +18,15 @@ Get-wmiobject  win32_networkadapter -filter "netconnectonstatus = 2" | select  n
 Netsh interface ipv4 show interfaces
    
 ipconfig /displaydns : Displays DNS records for that host.
+
+	User and group disabling and deleting
+
+net localgroup "Remote Desktop Users" /delete 
+
+net user > users.txt
+
+net group Administrators > admins.txt
+
+net user <username> /delete
+
+net user <username> /active:no 
