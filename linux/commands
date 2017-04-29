@@ -65,3 +65,10 @@ net.ipv6.conf.all.disable_ipv6 = 1
 net.ipv6.conf.default.disable_ipv6 = 1
 
 net.ipv6.conf.lo.disable_ipv6 = 1
+
+
+# Change the password in Mysql
+SELECT User,Host,Password FROM mysql.user;
+UPDATE mysql.user SET Password=PASSWORD('newPassWord') WHERE User="";
+UPDATE mysql.user SET Host='localhost' WHERE User="demo-user";
+
