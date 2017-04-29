@@ -39,7 +39,7 @@ schtasks /query
 schtasks /end /tn <taskname>
 
 $Host.Runspace.LanguageMode = 'ConstrainedLanguage'
-
+$ExecutionContext.SessionState.LanguageMode
 
 
 
