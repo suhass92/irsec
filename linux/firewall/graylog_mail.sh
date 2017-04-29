@@ -30,7 +30,7 @@ iptables -A INPUT -p tcp --dport 995 -m state --state NEW,ESTABLISHED -j ACCEPT
 iptables -A OUTPUT -p tcp --sport 995 -m state --state ESTABLISHED -j ACCEPT
 
 iptables -A INPUT -p tcp --dport 9000 -m state --state NEW,ESTABLISHED -j ACCEPT
-iptables -A OUTPUT -p tcp --sport 9000 -m state --state ESTABLISHED -j ACCEPT
+iptables -A OUTPUT -p tcp --sport 9000 -m state --state NEW,ESTABLISHED -j ACCEPT
 
  
 
